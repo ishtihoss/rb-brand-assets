@@ -61,6 +61,7 @@ Ensure logos exhibit strong contrast and sit on a background that is uncluttered
 - Clear space applies to the entire outer edge.
 - Clear space may be increased, never reduced.
 - Never render the logo smaller than the minimum size shown in the source PDF.
+- **Aspect ratio (CRITICAL):** native 264 × 41 px (≈ **6.44 : 1** width-to-height). When placing the logo on a slide or any layout, **preserve this ratio** — set width OR height and let the renderer derive the other (or compute height = width ÷ 6.44). Never set width and height independently; doing so stretches the lockup vertically, which is one of the misuse modes listed below and is immediately visible on a finished slide.
 
 #### RB Symbol (standalone)
 
@@ -198,6 +199,7 @@ Distilled defaults for use when auto-generating branded ad variations per `PLAN.
 
 - **Logo:** use the locked-up full-colour logo when possible; on busy photography, fall back to the reversed (orange RB) or white monochrome version for contrast.
 - **Logo clear-space:** keep a margin equal to the width of the "o" in the logotype around the lockup. Never place text or graphics inside this zone.
+- **Logo aspect ratio (CRITICAL):** native 264 × 41 px (≈ 6.44 : 1). Always preserve this ratio when sizing the logo — set width OR height, never both. Stretching it vertically is the most common misuse and is immediately visible. For a typical bottom-right corner placement on a 1920 × 1080 slide, ~180–260 px wide is a safe target (height auto-derives to ~28–40 px).
 - **Headline font:** Eina 01 Bold (fallback: Roboto Bold, then Arial Bold).
 - **Body font:** Eina 01 Regular (fallback: Roboto, then Arial).
 - **Palette ratios:** mostly black/white, with orange `#E87511` limited to ~10–15% as a trim/accent.
