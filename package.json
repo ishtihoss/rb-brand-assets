@@ -1,0 +1,25 @@
+{
+  "name": "@ishtihoss/rb-brand-assets",
+  "version": "0.1.0",
+  "description": "Ritchie Bros. brand reference assets (populated .pptx + brand_guidelines.md) consumed by the rb-presentation MCP server.",
+  "files": [
+    "RB-Overview.pptx",
+    "brand_guidelines.md",
+    "README.md"
+  ],
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishtihoss/rb-brand-assets.git"
+  },
+  "homepage": "https://github.com/ishtihoss/rb-brand-assets#readme",
+  "keywords": [
+    "ritchie-bros",
+    "rb-presentation",
+    "brand-assets",
+    "pptx"
+  ]
+}
