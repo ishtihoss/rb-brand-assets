@@ -238,9 +238,12 @@ Standardize solid orange elements on **`#E87511`**; the warmer `#DD6F2B` / `#F47
 ### Logo on slides (the most common miss)
 
 - **Always place the actual RB logo lockup as an image. NEVER typeset "Ritchie Bros." as live text.** Typing the wordmark in Arial is logo misuse (wrong typeface, per §3) and is the single most visible off-brand error on a finished slide.
-- Source the lockup from the cloned reference assets:
-  - **Works today:** extract the lockup embedded in `RB-Overview.pptx` — `ppt/media/image1.svg` (full-colour, for light backgrounds) or `image23.svg` (reversed/white, for dark or photo backgrounds), both native 263 × 40.
-  - **Preferred once present:** standalone `<clone>/logo/ritchie-bros-logo-pos-rgb.png` (full-colour) and `ritchie-bros-logo-rev_RGB.png` (reversed/white) in the brand-assets clone — ready to embed without unzipping the deck.
+- Source the lockup from the cloned brand assets (`git clone` of the brand-assets repo brings these along):
+  - **Use these:** standalone, transparent PNGs at native 6.44:1, ready to embed without unzipping anything —
+    - `<clone>/logo/ritchie-bros-logo-pos-rgb.png` — full-colour, for **light** backgrounds.
+    - `<clone>/logo/ritchie-bros-logo-rev_RGB.png` — reversed/white, for **dark or photo** backgrounds.
+    - `<clone>/logo/ritchie-bros-logo-rgb_wht_text.png` — white-text variant for busy/dark imagery.
+  - **Fallback:** the lockup is also embedded in `RB-Overview.pptx` — `ppt/media/image1.svg` (full-colour) or `image23.svg` (reversed), both native 263 × 40 — but prefer the standalone PNGs above.
 - Placement: a bottom corner, ~1.4–2.2 in wide, **height auto-derived at the 6.44:1 ratio** — never set width and height independently (stretching the lockup is misuse and immediately visible).
 - Footer: small `ritchiebros.com` and/or the seller tagline ("Local. Reach Global. Real Results.") in the bottom margin — white on dark fields, grey on light.
 
