@@ -199,13 +199,13 @@ This section governs **multi-slide presentations (PowerPoint decks)**, on top of
 
 ### Canvas & grid
 
-- **Aspect ratio:** 16:9 widescreen — slide size **13.33 in × 7.5 in** (1280 × 720 pt; 12192000 × 6858000 EMU). Never 4:3.
+- **Aspect ratio:** 16:9 widescreen — slide size **13.33 in × 7.5 in** (= **960 × 540 pt**, or 1280 × 720 px at 96 dpi; 12192000 × 6858000 EMU). Never 4:3.
 - **Margins:** consistent ~0.5 in outer margin. Headline and body copy share a left alignment edge ~0.5–0.6 in from the slide's left.
 - **Alignment:** left-aligned throughout. No centred body copy.
 
 ### Slide archetypes
 
-1. **Title / cover — orange-duotone split.** Full-bleed equipment photo across the slide; a left panel (~50–52% width, full height) carries an **orange duotone wash** over the photo; the tagline sits on the orange in **white Arial Bold**, with a thin horizontal divider rule under a caps eyebrow. The right ~48% shows the photo full-colour. (Reference: deck slide 1, "Partner Local. Reach Global. Real Results.")
+1. **Title / cover — orange-duotone split.** Full-bleed **high-resolution landscape** equipment photo across the slide (see *Imagery on slides* below — this must be a real wide photo, **not** a generated square stretched to fill); a left panel (~50–52% width, full height) carries an **orange duotone wash** over the photo (*Duotone recipe* below); the tagline sits on the orange in **white Arial Bold**, with a thin horizontal divider rule under a caps eyebrow. The right ~48% shows the photo full-colour. (Reference: deck slide 1, "Partner Local. Reach Global. Real Results.")
 2. **Section divider — full orange field.** A solid warm-orange (`#DD6F2B`) slide with a short white headline, to open a section. Use sparingly, as punctuation between content groups.
 3. **Content — light.** White background, **black** Arial Bold headline top-left, an orange caps eyebrow/kicker above it, body in near-black. Accent devices: an orange top rule or orange filled-circle bullets; grey hairline separators between rows.
 4. **Stat / callout cards.** Dark **`#333333`** cards on the field, each with a **left orange accent bar**, a large orange stat number (Arial Bold), and a white/near-white label beneath.
@@ -219,15 +219,26 @@ Content slides are **predominantly light (white)**. Reserve dark/near-black fiel
 | --- | --- | --- |
 | Background (content) | `#FFFFFF` | dominant surface for content pages |
 | Text / headline | `#000000` | Arial Bold headlines; near-black body |
-| Card / panel | `#333333` | dark callout cards, stat tiles |
+| Card / panel | `#333333` | dark callout cards, stat tiles (deck value; ≈ §3 80%-black `#323232`) |
 | Dark field | `#000000` / `#211D1E` | feature & photo-overlay slides |
 | **Primary orange** | `#E87511` | canonical RB orange (= theme accent1); accents, bullets, rules, stat numbers |
 | Warm orange (deck) | `#DD6F2B` / `#F47920` | reference deck's working orange for full-field dividers & the title duotone; both read as "RB orange" |
-| Duotone shadow | `#FF0000` | low end of the title-photo orange duotone gradient (`#DD6F2B → #FF0000`); not for text or fills |
+| Duotone shadow | `#FF0000` | deepest-shadow end of the title duotone gradient (`#DD6F2B → #FF0000`); blend only — **never a flat fill or text colour** |
 | Secondary accent | `#C90131` | crimson (theme accent2); rare — a second data series or special emphasis only |
 | Greys | `#424242` `#919191` `#BFBFBF` `#D5D5D5` `#E5E5E5` | secondary text, separators, inactive states |
 
 Standardize solid orange elements on **`#E87511`**; the warmer `#DD6F2B` / `#F47920` are acceptable for the large duotone/divider fields the reference deck uses them in.
+
+**Duotone recipe (title left panel):** desaturate the photo, then recolour it warm-orange — shadows to near-black/deep brown, midtones to `#DD6F2B`, highlights to a light orange (≈ `#F5AA5C`); apply to the left ~52% only, leaving the right full-colour with a soft vertical seam. Simpler fallback if a true duotone/recolor effect isn't available: lay a translucent `#DD6F2B` rectangle (~80% opacity) over a darkened copy of the photo. The reference deck's panel runs a `#DD6F2B → #FF0000` gradient, but keep `#FF0000` confined to the deepest shadow of that blend — **never place literal `#FF0000` as a flat fill or text colour, and never lay an opaque box that hides the photo.**
+
+### Imagery on slides (resolution matters)
+
+Two photo sources, and they are **not** interchangeable — matching the source to the container is what keeps slides crisp:
+
+- **Full-bleed & landscape (title, section dividers, feature slides):** use a **real high-resolution landscape photo**, ≥ ~2400 px wide. The reference deck's own RB photography is the best source — `RB-Overview.pptx` carries 16:9 landscape shots up to **4399 × 2471** in `ppt/media/` (the larger `*.jpeg` files; RB's own photos are also preferred over stock per §4). Downscaling a big photo to fit stays sharp. If no suitable RB landscape photo fits the topic, use a dark/near-black feature slide (archetype 5) or a full-orange divider — don't fall back to a stretched square.
+- **Square / portrait containers (stat tiles, side panels, inset cards):** use `generate_equipment_image`. It returns a **1:1 square**, capped at ~1280 px per side — the tool result reports the exact pixel dimensions. Place it in a square container at the reported size.
+
+**Never stretch a generated square (≤ ~1280 px) to fill a 16:9 background** — covering a 13.33 in slide upscales it well past native, which looks visibly soft/low-res. Generated squares are for square holes; full-bleed needs a native landscape photo.
 
 ### Typography on slides
 
@@ -244,7 +255,7 @@ Standardize solid orange elements on **`#E87511`**; the warmer `#DD6F2B` / `#F47
     - `<clone>/logo/ritchie-bros-logo-rev_RGB.png` — reversed/white, for **dark or photo** backgrounds.
     - `<clone>/logo/ritchie-bros-logo-rgb_wht_text.png` — white-text variant for busy/dark imagery.
   - **Fallback:** the lockup is also embedded in `RB-Overview.pptx` — `ppt/media/image1.svg` (full-colour) or `image23.svg` (reversed), both native 263 × 40 — but prefer the standalone PNGs above.
-- Placement: a bottom corner, ~1.4–2.2 in wide, **height auto-derived at the 6.44:1 ratio** — never set width and height independently (stretching the lockup is misuse and immediately visible).
+- Placement: usually a bottom corner, ~1.4–2.2 in wide (a **title/cover** slide may use the lockup larger as the hero brand mark). **Set width OR height and let the other follow the asset's own intrinsic ratio** (≈ 6.44:1; the PNGs are ~262–264 × 39–41, so read the file's real dimensions rather than hardcoding) — never set both independently (stretching the lockup is misuse and immediately visible).
 - Footer: small `ritchiebros.com` and/or the seller tagline ("Local. Reach Global. Real Results.") in the bottom margin — white on dark fields, grey on light.
 
 ### Deck-specific don'ts
@@ -252,12 +263,14 @@ Standardize solid orange elements on **`#E87511`**; the warmer `#DD6F2B` / `#F47
 - Don't typeset the wordmark instead of placing the logo image.
 - Don't flatten every slide to black — the deck is mostly light with deliberate dark/orange accents.
 - Don't centre body copy or use a non-Arial system font.
-- Don't stretch the logo or photos off native ratio (generated equipment images are square — place them in square containers).
+- Don't stretch the logo or photos off native ratio. Generated equipment images are 1:1 squares (≤ ~1280 px) — put them in square containers; for a full-bleed or landscape slot use a real high-res photo, never an upscaled square.
 - Don't spread orange-dominant fields beyond the title duotone and section dividers; keep content pages clean with orange as accent.
 
 ---
 
 ## Quick reference for the creative automation tool
+
+> **Scope:** this block is for the **ad-variation creative-automation tool** (a 1920 × 1080 **px** canvas, and it assumes Eina 01 is installed). It does **not** govern presentation decks — for decks follow **§5** above (Arial, 13.33 in canvas). Its pixel sizes and "Eina 01" font references do not apply to slides.
 
 Distilled defaults for use when auto-generating branded ad variations per `PLAN.md`:
 
