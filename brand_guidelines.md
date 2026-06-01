@@ -250,12 +250,12 @@ Two photo sources, and they are **not** interchangeable — matching the source 
 
 - **Always place the actual RB logo lockup as an image. NEVER typeset "Ritchie Bros." as live text.** Typing the wordmark in Arial is logo misuse (wrong typeface, per §3) and is the single most visible off-brand error on a finished slide.
 - Source the lockup from the cloned brand assets (`git clone` of the brand-assets repo brings these along):
-  - **Use these:** standalone, transparent PNGs at native 6.44:1, ready to embed without unzipping anything —
+  - **Use these:** standalone, transparent, **high-res** PNGs (2000 px wide, exported from vector — crisp at any slide size), ready to embed without unzipping anything —
     - `<clone>/logo/ritchie-bros-logo-pos-rgb.png` — full-colour, for **light** backgrounds.
     - `<clone>/logo/ritchie-bros-logo-rev_RGB.png` — reversed/white, for **dark or photo** backgrounds.
     - `<clone>/logo/ritchie-bros-logo-rgb_wht_text.png` — white-text variant for busy/dark imagery.
   - **Fallback:** the lockup is also embedded in `RB-Overview.pptx` — `ppt/media/image1.svg` (full-colour) or `image23.svg` (reversed), both native 263 × 40 — but prefer the standalone PNGs above.
-- Placement: usually a bottom corner, ~1.4–2.2 in wide (a **title/cover** slide may use the lockup larger as the hero brand mark). **Set width OR height and let the other follow the asset's own intrinsic ratio** (≈ 6.44:1; the PNGs are ~262–264 × 39–41, so read the file's real dimensions rather than hardcoding) — never set both independently (stretching the lockup is misuse and immediately visible).
+- Placement: usually a bottom corner, ~1.4–2.2 in wide (a **title/cover** slide may use the lockup larger as the hero brand mark). **Set width OR height and let the other follow the asset's own intrinsic ratio** (the high-res PNGs are 2000 × 304, ≈ 6.58:1 — read the file's real dimensions rather than hardcoding the canonical 6.44:1) — never set both independently (stretching the lockup is misuse and immediately visible).
 - Footer: small `ritchiebros.com` and/or the seller tagline ("Local. Reach Global. Real Results.") in the bottom margin — white on dark fields, grey on light.
 
 ### Deck-specific don'ts
