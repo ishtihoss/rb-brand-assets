@@ -193,6 +193,67 @@ Tens of thousands of people count on Ritchie Bros. every year to buy, sell, and 
 
 ---
 
+## 5. Presentation & Slide Design (deck output)
+
+This section governs **multi-slide presentations (PowerPoint decks)**, on top of the brand rules above. It is derived from the populated RB reference deck (`RB-Overview.pptx`, the "Regional Sales" master shipped by this connector) and is the prescriptive style for any deck composed against the brand context. **For slides, these rules win** where they appear to conflict with the generic "10–15% orange trim" guidance for print/ads — decks use orange more assertively (an orange-duotone title and full-orange section dividers) while keeping content pages clean.
+
+### Canvas & grid
+
+- **Aspect ratio:** 16:9 widescreen — slide size **13.33 in × 7.5 in** (1280 × 720 pt; 12192000 × 6858000 EMU). Never 4:3.
+- **Margins:** consistent ~0.5 in outer margin. Headline and body copy share a left alignment edge ~0.5–0.6 in from the slide's left.
+- **Alignment:** left-aligned throughout. No centred body copy.
+
+### Slide archetypes
+
+1. **Title / cover — orange-duotone split.** Full-bleed equipment photo across the slide; a left panel (~50–52% width, full height) carries an **orange duotone wash** over the photo; the tagline sits on the orange in **white Arial Bold**, with a thin horizontal divider rule under a caps eyebrow. The right ~48% shows the photo full-colour. (Reference: deck slide 1, "Partner Local. Reach Global. Real Results.")
+2. **Section divider — full orange field.** A solid warm-orange (`#DD6F2B`) slide with a short white headline, to open a section. Use sparingly, as punctuation between content groups.
+3. **Content — light.** White background, **black** Arial Bold headline top-left, an orange caps eyebrow/kicker above it, body in near-black. Accent devices: an orange top rule or orange filled-circle bullets; grey hairline separators between rows.
+4. **Stat / callout cards.** Dark **`#333333`** cards on the field, each with a **left orange accent bar**, a large orange stat number (Arial Bold), and a white/near-white label beneath.
+5. **Photo / dark feature.** Occasional full-photo or near-black (`#000000` / `#211D1E`) slide for emphasis; white text, orange accent.
+
+Content slides are **predominantly light (white)**. Reserve dark/near-black fields and the orange duotone for the title, section dividers, cards, and feature slides — do not flatten the whole deck to black.
+
+### Slide colour scheme (reference-deck theme)
+
+| Role | Hex | Notes |
+| --- | --- | --- |
+| Background (content) | `#FFFFFF` | dominant surface for content pages |
+| Text / headline | `#000000` | Arial Bold headlines; near-black body |
+| Card / panel | `#333333` | dark callout cards, stat tiles |
+| Dark field | `#000000` / `#211D1E` | feature & photo-overlay slides |
+| **Primary orange** | `#E87511` | canonical RB orange (= theme accent1); accents, bullets, rules, stat numbers |
+| Warm orange (deck) | `#DD6F2B` / `#F47920` | reference deck's working orange for full-field dividers & the title duotone; both read as "RB orange" |
+| Duotone shadow | `#FF0000` | low end of the title-photo orange duotone gradient (`#DD6F2B → #FF0000`); not for text or fills |
+| Secondary accent | `#C90131` | crimson (theme accent2); rare — a second data series or special emphasis only |
+| Greys | `#424242` `#919191` `#BFBFBF` `#D5D5D5` `#E5E5E5` | secondary text, separators, inactive states |
+
+Standardize solid orange elements on **`#E87511`**; the warmer `#DD6F2B` / `#F47920` are acceptable for the large duotone/divider fields the reference deck uses them in.
+
+### Typography on slides
+
+- The reference deck ships **no embedded fonts** and its theme face is **Arial**. Eina 01 is unavailable in the render sandbox, so **use Arial** (the brand-approved fallback): **Arial Bold** for headlines, **Arial Regular** for body. (Roboto is an acceptable substitute if present.)
+- Eyebrow / kicker: caps, letter-spaced, orange.
+- Keep the brand hierarchy: large bold headline, generous line height, restrained body size. Never shrink text to cram a slide — split onto another slide instead.
+
+### Logo on slides (the most common miss)
+
+- **Always place the actual RB logo lockup as an image. NEVER typeset "Ritchie Bros." as live text.** Typing the wordmark in Arial is logo misuse (wrong typeface, per §3) and is the single most visible off-brand error on a finished slide.
+- Source the lockup from the cloned reference assets:
+  - **Works today:** extract the lockup embedded in `RB-Overview.pptx` — `ppt/media/image1.svg` (full-colour, for light backgrounds) or `image23.svg` (reversed/white, for dark or photo backgrounds), both native 263 × 40.
+  - **Preferred once present:** standalone `<clone>/logo/ritchie-bros-logo-pos-rgb.png` (full-colour) and `ritchie-bros-logo-rev_RGB.png` (reversed/white) in the brand-assets clone — ready to embed without unzipping the deck.
+- Placement: a bottom corner, ~1.4–2.2 in wide, **height auto-derived at the 6.44:1 ratio** — never set width and height independently (stretching the lockup is misuse and immediately visible).
+- Footer: small `ritchiebros.com` and/or the seller tagline ("Local. Reach Global. Real Results.") in the bottom margin — white on dark fields, grey on light.
+
+### Deck-specific don'ts
+
+- Don't typeset the wordmark instead of placing the logo image.
+- Don't flatten every slide to black — the deck is mostly light with deliberate dark/orange accents.
+- Don't centre body copy or use a non-Arial system font.
+- Don't stretch the logo or photos off native ratio (generated equipment images are square — place them in square containers).
+- Don't spread orange-dominant fields beyond the title duotone and section dividers; keep content pages clean with orange as accent.
+
+---
+
 ## Quick reference for the creative automation tool
 
 Distilled defaults for use when auto-generating branded ad variations per `PLAN.md`:
